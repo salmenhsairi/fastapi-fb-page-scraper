@@ -59,7 +59,7 @@ class FacebookScraper:
 
     async def is_valid_page(self) -> bool:
         valid = False
-        await self.__refresh_soup() 
+        await self.__refresh_soup()
         if self.key and self.key.find('/') == -1:
             if isinstance(self.soup, BeautifulSoup) and self.soup.findAll(text="Page transparency"):
                 valid = True
@@ -107,7 +107,7 @@ class FacebookScraper:
         stats_dict = {'like': [], 'follow': [], 'checked_in': []}
         logger.info(stats_dict)
         for stat_key in stats_dict.keys():
-            def filter_func(t): return ((t.find(stat_key.replace('_',' ')) != -1
+            def filter_func(t): return ((t.find(stat_key.replace('_', ' ')) != -1
                                          or (description_stat_text[description_stat_text.index(t)+1].find(stat_key.replace('_', ' ')) != -1)
                                          and not has_numbers(description_stat_text[description_stat_text.index(t)+1]))
                                         and has_numbers(t)

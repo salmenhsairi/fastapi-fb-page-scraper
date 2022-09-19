@@ -1,12 +1,8 @@
-from .schema import FacebookPage, FacebookPost
+from .schema import FacebookPage
 from motor import motor_asyncio
-from dotenv import dotenv_values
 import os
 
-os.environ['DATABASE_CONNECTION_URL'] = 'mongodb://localhost:27017'
-client = motor_asyncio.AsyncIOMotorClient(
-    os.getenv("DATABASE_CONNECTION_URL"))
-
+client = motor_asyncio.AsyncIOMotorClient("mongodb://localhost:27017")
 database = client.FB_WEBSCRAPING
 collection = database.FB_Page
 
