@@ -149,10 +149,10 @@ class FacebookScraper:
             "span", class_="gvxzyvdx aeinzg81 t7p7dqev gh25dzvf exr7barw b6ax4al1 gem102v4 ncib64c9 mrvwc6qr sx8pxkcf f597kf1v cpcgwwas m2nijcs8 hxfwr5lz k1z55t6l oog5qr5w tes86rjd pbevjfx6 ztn2w49o")
         post_stats = self.posts_section.find_all(
             'div', class_="hf30pyar lq84ybu9 ta68dy8c kpwa50dg lk0hwhjd cmg2g80i")
-        try:
-            assert len(post_descriptions) == len(post_stats)
-        except AssertionError as e:
-            raise (Exception("cannot handle page posts"))
+        # try:
+        #     assert len(post_descriptions) == len(post_stats)
+        # except AssertionError as e:
+        #     raise (Exception("cannot handle page posts"))
 
         posts = []
         for description, stat in zip(post_descriptions, post_stats):
