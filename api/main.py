@@ -46,9 +46,9 @@ async def create_page_from_url(url: FacebookURL):
             else:
                 raise (Exception('unable to create the page, something went wrong'))
     except Exception as e:
-        # raise HTTPException(400, "bad request, something went wrong")
+        raise HTTPException(400, "something went wrong")
         # raise
-        raise HTTPException(400, str(e))
+        # raise HTTPException(500, str(e))
 
 
 @app.post('/pages/create', response_model=FacebookPage)
